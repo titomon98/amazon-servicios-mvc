@@ -1,9 +1,9 @@
 const { Sequelize } = require('sequelize')
 
 const sequelize = new Sequelize(
-    'nombre_bd',
-    'user',
-    'password', //Si no hay nada, se pone null
+    'amazon_inventario',
+    'root',
+    'Jose2598@', //Si no hay nada, se pone null
     {
         host: 'localhost',
         dialect: 'mysql',

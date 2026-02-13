@@ -6,7 +6,7 @@ const TipoProducto = require('./TipoProducto')(sequelize, Sequelize)
 const Dimension = require('./Dimension')(sequelize, Sequelize)
 const Proveedor = require('./Proveedor')(sequelize, Sequelize)
 const Producto = require('./Producto')(sequelize, Sequelize)
-const DetalleTipoProducto = require('./DetalleTipoProducto')(sequelize, Sequelize)
+const DetalleTiposDeProducto = require('./DetalleTiposDeProducto')(sequelize, Sequelize)
 
 //Relaciones
 Proveedor.hasMany(Producto)
@@ -15,11 +15,11 @@ Producto.belongsTo(Proveedor)
 Dimension.hasMany(Producto)
 Producto.belongsTo(Dimension)
 
-TipoProducto.hasMany(DetalleTipoProducto)
-DetalleTipoProducto.belongsTo(TipoProducto)
+TipoProducto.hasMany(DetalleTiposDeProducto)
+DetalleTiposDeProducto.belongsTo(TipoProducto)
 
-Producto.hasMany(DetalleTipoProducto)
-DetalleTipoProducto.belongsTo(Producto)
+Producto.hasMany(DetalleTiposDeProducto)
+DetalleTiposDeProducto.belongsTo(Producto)
 
 module.exports = {
     sequelize,
@@ -27,5 +27,5 @@ module.exports = {
     Dimension,
     Proveedor,
     Producto,
-    DetalleTipoProducto
+    DetalleTiposDeProducto
 }

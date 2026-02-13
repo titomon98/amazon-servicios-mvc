@@ -4,9 +4,7 @@ const { TipoProducto } = require('../models')
 exports.create = async (req, res) => {
     const tipoproducto = await TipoProducto.create(req.body)
     const bodyRespuesta = {
-        code: 201,
-        message: 'Creado correctamente',
-        tipo: tipoproducto
+        message: 'El tipo de producto ' + tipoproducto.tipo +' fue creado correctamente'
     }
-    res.json(bodyRespuesta) //Devolvemos el producto creado
+    res.status(201).json(bodyRespuesta)//Devolvemos el producto creado
 }
